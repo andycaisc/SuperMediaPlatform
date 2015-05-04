@@ -44,6 +44,8 @@ private:
 	AVCodec* m_avCodec;
 	struct SwsContext *m_swsCtx;
 
+	int m_videoIndex;
+
     SuperPictureHandler* m_pictureHandler;
 
     Activity<SupVideoCapFFmpegImpl> m_captureActivity;

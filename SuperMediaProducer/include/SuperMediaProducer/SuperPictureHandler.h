@@ -13,7 +13,7 @@ public:
     {
         YUV420P,
         RGB24
-    }
+    };
 
     virtual void handlePicture(PicType type, int width, int height, void* picture, int picSize) = 0;
 

@@ -1,0 +1,4 @@
+#ifndef VIDEOBUFFER_H
+#define VIDEOBUFFER_H
+
+#endif // VIDEOBUFFER_H

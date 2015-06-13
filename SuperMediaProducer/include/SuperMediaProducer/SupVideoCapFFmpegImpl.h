@@ -4,19 +4,16 @@
 #ifndef SUPVIDEOCAPFFMPEGIMPL_INCLUDED
 #define SUPVIDEOCAPFFMPEGIMPL_INCLUDED
 
-#ifdef __CPLUSPLUS
+
 extern "C"
 {
-#endif // __CPLUSPLUS
-
 #include "libavcodec/avcodec.h"
 #include "libavformat/avformat.h"
 #include "libswscale/swscale.h"
 #include "libavdevice/avdevice.h"
 
-#ifdef __CPLUSPLUS
 };
-#endif // __CPLUSPLUS
+
 
 #include "Poco/Activity.h"
 #include "Poco/Thread.h"

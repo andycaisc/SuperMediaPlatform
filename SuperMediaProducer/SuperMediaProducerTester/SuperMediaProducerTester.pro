@@ -4,15 +4,26 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT       += core gui widgets multimedia
 
 TARGET = SuperMediaProducerTester
 TEMPLATE = app
 
+INCLUDEPATH += "../include"
+LIBS += -L../../lib -lSuperMediaProducerd -lavcodec -lavutil -lavformat -lavdevice -lswscale
+
 
 SOURCES += main.cpp\
-        MediaTestPlayer.cpp
+        MediaTestPlayer.cpp \
+    VideoWidgetSurface.cpp \
+    YUV420PVideoBuffer.cpp \
+    VideoWidget.cpp \
+    VideoDataSource.cpp \
+    RGB24VideoBuffer.cpp
 
-HEADERS  += MediaTestPlayer.h
+HEADERS  += MediaTestPlayer.h \
+    VideoWidgetSurface.h \
+    YUV420PVideoBuffer.h \
+    VideoWidget.h \
+    VideoDataSource.h \
+    RGB24VideoBuffer.h

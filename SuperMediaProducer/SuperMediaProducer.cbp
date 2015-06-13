@@ -36,24 +36,33 @@
 		</Compiler>
 		<Linker>
 			<Add option="`sdl-config --libs`" />
+			<Add library="avcodec" />
+			<Add library="avutil" />
+			<Add library="avformat" />
+			<Add library="avdevice" />
+			<Add library="swscale" />
+			<Add library="PocoFoundation" />
 		</Linker>
 		<Unit filename="cb.bmp" />
 		<Unit filename="include/SuperMediaProducer/SupMedProducerAPI.h">
-			<Option target="&lt;{~None~}&gt;" />
+			<Option target="Debug" />
 		</Unit>
 		<Unit filename="include/SuperMediaProducer/SupVideoCapFFmpegImpl.h">
-			<Option target="&lt;{~None~}&gt;" />
+			<Option target="Debug" />
 		</Unit>
 		<Unit filename="include/SuperMediaProducer/SupVideoCaptureImpl.h">
-			<Option target="&lt;{~None~}&gt;" />
+			<Option target="Debug" />
 		</Unit>
 		<Unit filename="include/SuperMediaProducer/SuperPictureHandler.h">
-			<Option target="&lt;{~None~}&gt;" />
+			<Option target="Debug" />
 		</Unit>
 		<Unit filename="include/SuperMediaProducer/SuperVideoCapture.h">
-			<Option target="&lt;{~None~}&gt;" />
+			<Option target="Debug" />
 		</Unit>
 		<Unit filename="src/SupVideoCapFFmpegImpl.cpp" />
+		<Unit filename="src/SuperVideoCapture.cpp">
+			<Option target="Debug" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />

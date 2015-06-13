@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1430234188 source:/home/debian/git/SuperMediaPlatform/SuperMediaProducer/src/SupVideoCapFFmpegImpl.cpp
+	"SuperMediaProducer/SupVideoCapFFmpegImpl.h"
+
+1431143310 /home/debian/git/SuperMediaPlatform/SuperMediaProducer/include/SuperMediaProducer/SupVideoCapFFmpegImpl.h
+	"libavcodec/avcodec.h"
+	"libavformat/avformat.h"
+	"libswscale/swscale.h"
+	"libavdevice/avdevice.h"
+	"Poco/Activity.h"
+	"Poco/Thread.h"
+	"SupVideoCaptureImpl.h"
+
+1431140183 /home/debian/git/SuperMediaPlatform/SuperMediaProducer/include/SuperMediaProducer/SupVideoCaptureImpl.h
+	<string>
+	"SuperPictureHandler.h"
+
+1430233927 /home/debian/git/SuperMediaPlatform/SuperMediaProducer/include/SuperMediaProducer/SuperPictureHandler.h
+
+1431098998 source:/home/debian/git/SuperMediaPlatform/SuperMediaProducer/src/SuperVideoCapture.cpp
+	"SuperMediaProducer/SuperVideoCapture.h"
+	"SuperMediaProducer/SupVideoCapFFmpegImpl.h"
+
+1429716433 /home/debian/git/SuperMediaPlatform/SuperMediaProducer/include/SuperMediaProducer/SuperVideoCapture.h
+	<memory>
+	"SupVideoCaptureImpl.h"
+	"SupMedProducerAPI.h"
+
+1429628515 /home/debian/git/SuperMediaPlatform/SuperMediaProducer/include/SuperMediaProducer/SupMedProducerAPI.h
+

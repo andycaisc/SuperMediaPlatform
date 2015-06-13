@@ -40,6 +40,9 @@ bool SupVideoCapFFmpegImpl::open(const std::string& device)
 		return false;
 	}
 
+	m_swsCtx = sws_getContext(m_avCodecCtx->width, m_avCodecCtx->height, m_avCodecCtx->pix_fmt, m_avCodecCtx->width, m_avCodecCtx->height, PIX_FMT_YUV420P, SWS_BICUBIC, NULL, NULL, NULL);
+
+
     return true;
 }
 
@@ -59,6 +62,10 @@ void SupVideoCapFFmpegImpl::capturing()
 {
     AVPacket* avPacket = (AVPacket *)av_malloc(sizeof(AVPacket));
 	AVFrame* avFrame = avcodec_alloc_frame();
+	AVFrame* frameData = avcodec_alloc_frame();
+
+	uint8_t *buffer = (uint8_t *)av_malloc(avpicture_get_size(PIX_FMT_YUV420P, m_avCodecCtx->width, m_avCodecCtx->height));
+	avpicture_fill((AVPicture *)frameData, buffer, PIX_FMT_YUV420P, m_avCodecCtx->width, m_avCodecCtx->height);
 
 	int gotPicture = 0;
 
@@ -80,9 +87,11 @@ void SupVideoCapFFmpegImpl::capturing()
 
 				if (gotPicture > 0)
 				{
-					memcpy(picture, avFrame->data[0], pixSize);
-					memcpy(picture + pixSize, avFrame->data[2], pixSize  / 4);
-					memcpy(picture + pixSize * 5 / 4 , avFrame->data[1], pixSize / 4);
+                    sws_scale(m_swsCtx, (const uint8_t* const*)avFrame->data, avFrame->linesize, 0, m_avCodecCtx->height, frameData->data, frameData->linesize);
+
+					memcpy(picture, frameData->data[0], pixSize);
+					memcpy(picture + pixSize, frameData->data[2], pixSize  / 4);
+					memcpy(picture + pixSize * 5 / 4 , frameData->data[1], pixSize / 4);
 
 					if (m_pictureHandler)
 					{

@@ -18,7 +18,9 @@ public:
     virtual void stop() = 0;
 
 protected:
-    SupVideoCaptureImpl(const std::string& videoFormat) {}
+    SupVideoCaptureImpl(const std::string& videoFormat) : m_videoFormat(videoFormat)
+    {
+    }
     std::string m_videoFormat;
 };
 
